@@ -1,0 +1,804 @@
+[
+ {
+  "function": "cordic_lut",
+  "args": [
+   "n"
+  ],
+  "block": [
+   {
+    "if": [
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 0
+      },
+      "then": [
+       {
+        "return": 1.648721270700128
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 1
+      },
+      "then": [
+       {
+        "return": 1.284025416687742
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 2
+      },
+      "then": [
+       {
+        "return": 1.133148453066826
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 3
+      },
+      "then": [
+       {
+        "return": 1.064494458917859
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 4
+      },
+      "then": [
+       {
+        "return": 1.031743407499103
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 5
+      },
+      "then": [
+       {
+        "return": 1.015747708586686
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 6
+      },
+      "then": [
+       {
+        "return": 1.007843097206488
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 7
+      },
+      "then": [
+       {
+        "return": 1.003913889338348
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 8
+      },
+      "then": [
+       {
+        "return": 1.001955033591003
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 9
+      },
+      "then": [
+       {
+        "return": 1.000977039492417
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 10
+      },
+      "then": [
+       {
+        "return": 1.000488400478694
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 11
+      },
+      "then": [
+       {
+        "return": 1.000244170429748
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 12
+      },
+      "then": [
+       {
+        "return": 1.000122077763384
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 13
+      },
+      "then": [
+       {
+        "return": 1.000061037018933
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 14
+      },
+      "then": [
+       {
+        "return": 1.000030518043791
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 15
+      },
+      "then": [
+       {
+        "return": 1.0000152589054785
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 16
+      },
+      "then": [
+       {
+        "return": 1.000007629423635
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 17
+      },
+      "then": [
+       {
+        "return": 1.0000038147045416
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 18
+      },
+      "then": [
+       {
+        "return": 1.0000019073504518
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 19
+      },
+      "then": [
+       {
+        "return": 1.0000009536747712
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 20
+      },
+      "then": [
+       {
+        "return": 1.000000476837272
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 21
+      },
+      "then": [
+       {
+        "return": 1.0000002384186075
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 22
+      },
+      "then": [
+       {
+        "return": 1.0000001192092967
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 23
+      },
+      "then": [
+       {
+        "return": 1.0000000596046466
+       }
+      ]
+     },
+     {
+      "cond": {
+       "binop": "==",
+       "argl": "n",
+       "argr": 24
+      },
+      "then": [
+       {
+        "return": 1.0000000298023228
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "function": "floor",
+  "args": [
+   "x"
+  ],
+  "block": []
+ },
+ {
+  "function": "ln_cordic",
+  "args": [
+   "x"
+  ],
+  "block": [
+   {
+    "declare": "result",
+    "value": 0
+   },
+   {
+    "declare": "e",
+    "value": 2.718281828459045
+   },
+   {
+    "while": {
+     "binop": "<=",
+     "argl": "e",
+     "argr": "x"
+    },
+    "do": [
+     {
+      "set": "result",
+      "value": {
+       "binop": "+",
+       "argl": "result",
+       "argr": 1
+      }
+     },
+     {
+      "set": "x",
+      "value": {
+       "binop": "/",
+       "argl": "x",
+       "argr": "e"
+      }
+     }
+    ]
+   },
+   {
+    "while": {
+     "binop": "<",
+     "argl": "x",
+     "argr": 1
+    },
+    "do": [
+     {
+      "set": "result",
+      "value": {
+       "binop": "-",
+       "argl": "result",
+       "argr": 1
+      }
+     },
+     {
+      "set": "x",
+      "value": {
+       "binop": "*",
+       "argl": "x",
+       "argr": "e"
+      }
+     }
+    ]
+   },
+   {
+    "declare": "w",
+    "value": 0
+   },
+   {
+    "declare": "power",
+    "value": {
+     "binop": "/",
+     "argl": 1,
+     "argr": 2
+    }
+   },
+   {
+    "iterator": "i",
+    "from": 0,
+    "to": 24,
+    "do": [
+     {
+      "if": [
+       {
+        "cond": {
+         "binop": "<",
+         "argl": {
+          "call": "cordic_lut",
+          "args": [
+           "i"
+          ]
+         },
+         "argr": "x"
+        },
+        "then": [
+         {
+          "set": "result",
+          "value": {
+           "binop": "+",
+           "argl": "result",
+           "argr": "power"
+          }
+         },
+         {
+          "set": "x",
+          "value": {
+           "binop": "/",
+           "argl": "x",
+           "argr": {
+            "call": "cordic_lut",
+            "args": [
+             "i"
+            ]
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "set": "power",
+      "value": {
+       "binop": "/",
+       "argl": "power",
+       "argr": 2
+      }
+     }
+    ]
+   },
+   {
+    "set": "x",
+    "value": {
+     "binop": "-",
+     "argl": "x",
+     "argr": 1
+    }
+   },
+   {
+    "set": "x",
+    "value": {
+     "binop": "*",
+     "argl": {
+      "binop": "*",
+      "argl": {
+       "binop": "*",
+       "argl": "x",
+       "argr": {
+        "binop": "-",
+        "argl": 1,
+        "argr": {
+         "binop": "/",
+         "argl": "x",
+         "argr": 2
+        }
+       }
+      },
+      "argr": {
+       "binop": "+",
+       "argl": 1,
+       "argr": {
+        "binop": "/",
+        "argl": "x",
+        "argr": 3
+       }
+      }
+     },
+     "argr": {
+      "binop": "-",
+      "argl": 1,
+      "argr": {
+       "binop": "/",
+       "argl": "x",
+       "argr": 4
+      }
+     }
+    }
+   },
+   {
+    "return": {
+     "binop": "+",
+     "argl": "result",
+     "argr": "x"
+    }
+   }
+  ]
+ },
+ {
+  "function": "exp_cordic",
+  "args": [
+   "x"
+  ],
+  "block": [
+   {
+    "declare": "e",
+    "value": 2.718281828459045
+   },
+   {
+    "declare": "int_part",
+    "value": {
+     "call": "floor",
+     "args": [
+      "x"
+     ]
+    }
+   },
+   {
+    "declare": "result",
+    "value": 1
+   },
+   {
+    "while": {
+     "binop": ">",
+     "argl": "int_part",
+     "argr": 0
+    },
+    "do": [
+     {
+      "set": "int_part",
+      "value": {
+       "binop": "-",
+       "argl": "int_part",
+       "argr": 1
+      }
+     },
+     {
+      "set": "result",
+      "value": {
+       "binop": "*",
+       "argl": "result",
+       "argr": "e"
+      }
+     }
+    ]
+   },
+   {
+    "while": {
+     "binop": "<",
+     "argl": "int_part",
+     "argr": 0
+    },
+    "do": [
+     {
+      "set": "int_part",
+      "value": {
+       "binop": "+",
+       "argl": "int_part",
+       "argr": 1
+      }
+     },
+     {
+      "set": "result",
+      "value": {
+       "binop": "/",
+       "argl": "result",
+       "argr": "e"
+      }
+     }
+    ]
+   },
+   {
+    "declare": "z",
+    "value": {
+     "binop": "-",
+     "argl": "x",
+     "argr": {
+      "call": "floor",
+      "args": [
+       "x"
+      ]
+     }
+    }
+   },
+   {
+    "declare": "power",
+    "value": {
+     "binop": "/",
+     "argl": 1,
+     "argr": 2
+    }
+   },
+   {
+    "iterator": "i",
+    "from": 0,
+    "to": 24,
+    "do": [
+     {
+      "if": [
+       {
+        "cond": {
+         "binop": "<",
+         "argl": "power",
+         "argr": "z"
+        },
+        "then": [
+         {
+          "set": "result",
+          "value": {
+           "binop": "*",
+           "argl": "result",
+           "argr": {
+            "call": "cordic_lut",
+            "args": [
+             "i"
+            ]
+           }
+          }
+         },
+         {
+          "set": "z",
+          "value": {
+           "binop": "-",
+           "argl": "z",
+           "argr": "power"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "set": "power",
+      "value": {
+       "binop": "/",
+       "argl": "power",
+       "argr": 2
+      }
+     }
+    ]
+   },
+   {
+    "set": "result",
+    "value": {
+     "binop": "*",
+     "argl": "result",
+     "argr": {
+      "binop": "+",
+      "argl": 1,
+      "argr": {
+       "binop": "*",
+       "argl": "z",
+       "argr": {
+        "binop": "+",
+        "argl": 1,
+        "argr": {
+         "binop": "*",
+         "argl": {
+          "binop": "/",
+          "argl": "z",
+          "argr": 2
+         },
+         "argr": {
+          "binop": "+",
+          "argl": 1,
+          "argr": {
+           "binop": "*",
+           "argl": {
+            "binop": "/",
+            "argl": "z",
+            "argr": 3
+           },
+           "argr": {
+            "binop": "+",
+            "argl": 1,
+            "argr": {
+             "binop": "/",
+             "argl": "z",
+             "argr": 4
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "return": "result"
+   }
+  ]
+ },
+ {
+  "function": "pow",
+  "args": [
+   "base",
+   "exponent"
+  ],
+  "block": [
+   {
+    "declare": "result",
+    "value": 1
+   },
+   {
+    "while": {
+     "binop": ">=",
+     "argl": "exponent",
+     "argr": 1
+    },
+    "do": [
+     {
+      "set": "exponent",
+      "value": {
+       "binop": "-",
+       "argl": "exponent",
+       "argr": 1
+      }
+     },
+     {
+      "set": "result",
+      "value": {
+       "binop": "*",
+       "argl": "result",
+       "argr": "base"
+      }
+     }
+    ]
+   },
+   {
+    "while": {
+     "binop": "<",
+     "argl": "exponent",
+     "argr": 0
+    },
+    "do": [
+     {
+      "set": "exponent",
+      "value": {
+       "binop": "+",
+       "argl": "exponent",
+       "argr": 1
+      }
+     },
+     {
+      "set": "result",
+      "value": {
+       "binop": "/",
+       "argl": "result",
+       "argr": "base"
+      }
+     }
+    ]
+   },
+   {
+    "if": [
+     {
+      "cond": {
+       "binop": "~=",
+       "argl": "exponent",
+       "argr": 0
+      },
+      "then": [
+       {
+        "return": {
+         "binop": "*",
+         "argl": "result",
+         "argr": {
+          "call": "exp_cordic",
+          "args": [
+           {
+            "binop": "*",
+            "argl": {
+             "call": "ln_cordic",
+             "args": [
+              "base"
+             ]
+            },
+            "argr": "exponent"
+           }
+          ]
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "return": "result"
+   }
+  ]
+ }
+]

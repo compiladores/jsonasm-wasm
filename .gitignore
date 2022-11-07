@@ -1,0 +1,5 @@
+/target
+/result
+/test/test.wasm
+/test/test.wat
+*.nix
