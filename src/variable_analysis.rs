@@ -163,7 +163,7 @@ impl AnalysisResults<Statement> {
     let body = self.analyze_variables(content, &mut locals);
     self.functions.insert(index, Function {
       arguments,
-      local_count: locals.count(),
+      local_count: locals.count() - arguments,
       body
     });
   }
