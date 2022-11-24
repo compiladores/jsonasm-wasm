@@ -1,8 +1,3 @@
-
-
-
-Spec: https://www.w3.org/TR/wasm-core-1/
-
 ## Libraries
 * https://docs.rs/walrus/latest/walrus/
 (I dislike the model, having to store locals at a global level to then have them [filtered](https://github.com/rustwasm/walrus/blob/75d4728cf27ef73c0105b476a99561b78797f200/src/module/functions/local_function/mod.rs#L170) later)

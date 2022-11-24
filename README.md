@@ -39,3 +39,30 @@ Tampoco es valido usar un flotante como condicion de un if (debe ser un entero).
 Para solucionar esto se analiza los tipos que requiere cada expresion y se agregan conversiones de tipo donde sea necesario.
 ### Listar él o los links que resultaron más útiles para responder esas preguntas.
 El estandard fue lo mas util al respecto https://www.w3.org/TR/wasm-core-1/
+Ademas existe un [repo con ejemplos de uso de las instrucciones](https://github.com/WebAssembly/spec/tree/main/test/core) que sirvio,
+en particular el ejemplo de la [funcion factorial](https://github.com/WebAssembly/spec/blob/main/test/core/fac.wast) escrita en
+varios estilos que ilustra como organizar ciertas cosas.
+### ¿Cómo implementarías arrays de largo fijo en este target?
+WASM soporta bloques de memoria por lo cual se puede usar esto directamente en caso de que la cantidad de arreglos sea estatica
+o bien armarme un heap e ir distribuyendo los arreglos en tiempo de compilacion.
+### ¿Cómo implementarías una interfaz con la plataforma (uso de syscalls, librerías standard, etc) en este target?
+Agregaria funciones que sean importadas (instruccion import), incluyendo la dependencia.
+Un [ejemplo](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md#web-assembly-text-example) de esto seria [WASI](https://wasi.dev/)
+que permite realizar varias operaciones comunes como lectura de archivos.
+### ¿Cuán facil fue aprender esta plataforma o VM? ¿Por qué?
+Aprender el lenguaje tiene algunas complicaciones al principio por la formalidad del standard y ciertos nombres poco claros (ej "loop" no vuelve al principio por si solo, hay que hacerlo manualmente). Otro tema es referencias a acronimos antes definidos, ej inn.itestop se refiere a cosas como i32.eqz
+Ver los ejemplos despeja bastante esas dudas.
+### ¿Recomendarías esta plataforma o VM a futuros estudiantes de la materia? ¿Por qué?
+La recomendaria, una vez que se 
+### Liste ventajas y desventajas de trabajar en esta plataforma o VM.
+Ventajas:
+- El lenguaje soporta nativamente constuctos de alto nivel como funciones y estructuras de control. Esto simplifica trabajar con el codigo.
+- Una vez que se tiene el archivo .wasm hay varias herramientas disponibles para analizarlo e incluso optimizarlo.
+- Al tener verificacion de tipos hay varios errores que se detectan facilmente porque el interprete rechaza el programa.
+  Esto es una gran ventaja comparado con ensambladores donde ciertos errores pueden pasar desapercibidos en ciertas condiciones y fallar catastroficamente en otras.
+- Es muy facil interacturar entre el archivo compilado y otros lenguajes, por lo que es muy facil hacer pruebas y poner en uso el resultado.
+  No habria problema que parte de mi programa este en jsonlang, una parte en rust y otra en pascal.
+Desventajas:
+- Tener que respetar los tipos de los enteros requiere hacer analisis extra, ya que no todos los tipos se pueden usar para lo que sea.
+- La interaccion con funciones externas tiene ciertas limitaciones, en particular que la funcion debe escribir sobre el espacio de memoria propio para
+  devolver datos complejos. Esto se piensa arreglar en versiones futuras.
