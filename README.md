@@ -42,6 +42,7 @@ El estandard fue lo mas util al respecto https://www.w3.org/TR/wasm-core-1/
 Ademas existe un [repo con ejemplos de uso de las instrucciones](https://github.com/WebAssembly/spec/tree/main/test/core) que sirvio,
 en particular el ejemplo de la [funcion factorial](https://github.com/WebAssembly/spec/blob/main/test/core/fac.wast) escrita en
 varios estilos que ilustra como organizar ciertas cosas.
+Tambien revise el codigo de varias librerias, las cuales termine no usando por desacuerdos con el modelo que usaban.
 ### ¿Cómo implementarías arrays de largo fijo en este target?
 WASM soporta bloques de memoria por lo cual se puede usar esto directamente en caso de que la cantidad de arreglos sea estatica
 o bien armarme un heap e ir distribuyendo los arreglos en tiempo de compilacion.
@@ -53,15 +54,22 @@ que permite realizar varias operaciones comunes como lectura de archivos.
 Aprender el lenguaje tiene algunas complicaciones al principio por la formalidad del standard y ciertos nombres poco claros (ej "loop" no vuelve al principio por si solo, hay que hacerlo manualmente). Otro tema es referencias a acronimos antes definidos, ej inn.itestop se refiere a cosas como i32.eqz
 Ver los ejemplos despeja bastante esas dudas.
 ### ¿Recomendarías esta plataforma o VM a futuros estudiantes de la materia? ¿Por qué?
-La recomendaria, una vez que se 
+La recomendaria, por su robustez, simplez y utilidad. Con una cantidad relativamente pequeña de instrucciones se puede armar programas que luego
+pueden ser utilizados en todo tipo de contextos. Es bastante util que si tengo un algoritmo implementado en mi lenguaje pueda usarlo en otro lugar
+casi sin dificultad.
 ### Liste ventajas y desventajas de trabajar en esta plataforma o VM.
 Ventajas:
 - El lenguaje soporta nativamente constuctos de alto nivel como funciones y estructuras de control. Esto simplifica trabajar con el codigo.
 - Una vez que se tiene el archivo .wasm hay varias herramientas disponibles para analizarlo e incluso optimizarlo.
 - Al tener verificacion de tipos hay varios errores que se detectan facilmente porque el interprete rechaza el programa.
   Esto es una gran ventaja comparado con ensambladores donde ciertos errores pueden pasar desapercibidos en ciertas condiciones y fallar catastroficamente en otras.
+- Esta verificacion tambien garantiza por adelantado seguridad: el programa nunca puede acceder a memoria que no debe.
+- Por esto los programas WASM se pueden ejecutar con poco costo extra en plataformas seguras como el buscador, sistemas de plugin o plataformas serverless
 - Es muy facil interacturar entre el archivo compilado y otros lenguajes, por lo que es muy facil hacer pruebas y poner en uso el resultado.
   No habria problema que parte de mi programa este en jsonlang, una parte en rust y otra en pascal.
+- Poca cantidad de instrucciones, por lo que es facil de entender
+- Al ser tanto compilable como interpretable (JIT o estatico) se puede obtener rapidez, flexibildad o un intermedio segun convenga
+
 Desventajas:
 - Tener que respetar los tipos de los enteros requiere hacer analisis extra, ya que no todos los tipos se pueden usar para lo que sea.
 - La interaccion con funciones externas tiene ciertas limitaciones, en particular que la funcion debe escribir sobre el espacio de memoria propio para
