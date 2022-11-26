@@ -34,6 +34,7 @@ fn demand_int(expr: Expression) -> Expression {
     Expression::BinaryOp { op: BinaryOp::BitwiseOr, .. } => binop_into_int(expr),
     Expression::BinaryOp { op: BinaryOp::RightShift, .. } => binop_into_int(expr),
     Expression::BinaryOp { op: BinaryOp::LeftShift, .. } => binop_into_int(expr),
+    Expression::BinaryOp { op: BinaryOp::Modulo, .. } => binop_into_int(expr),
     Expression::BinaryOp { lhs, op, rhs } => into_int(Expression::BinaryOp {
       lhs: Box::new(demand_float(*lhs)),
       op: op,
@@ -105,7 +106,7 @@ fn demand_float(expr: Expression) -> Expression {
       op: UnaryOp::Floor, arg: Box::new(demand_float(*arg))
     },
     Expression::BinaryOp { op: BinaryOp::Exponentiation, .. } => floatop(expr),
-    Expression::BinaryOp { op: BinaryOp::Modulo, .. } => floatop(expr),
+    Expression::BinaryOp { op: BinaryOp::Modulo, .. } => binop_into_float(expr),
     Expression::BinaryOp { op: BinaryOp::BitwiseAnd, .. } => binop_into_float(expr),
     Expression::BinaryOp { op: BinaryOp::BitwiseOr, .. } => binop_into_float(expr),
     Expression::BinaryOp { op: BinaryOp::RightShift, .. } => binop_into_float(expr),

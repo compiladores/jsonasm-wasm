@@ -24,7 +24,8 @@ pub enum BinaryOp {
   Greater,
   GreaterEq,
   Equal,
-  NotEqual
+  NotEqual,
+  Modulo
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -94,7 +95,7 @@ impl AnalysisResults<Statement> {
       jsonlang::BinaryOp::Division => leave_unchanged(lhs, BinaryOp::Division, rhs),
       jsonlang::BinaryOp::Exponentiation => Expression::FunctionCall(self.get_polyfill_index("#pow"),
         vec![self.add_polyfills_to_expression(lhs), self.add_polyfills_to_expression(rhs)]),
-      jsonlang::BinaryOp::Modulo => todo!("¬impl"),
+      jsonlang::BinaryOp::Modulo => leave_unchanged(lhs, BinaryOp::Modulo, rhs),
       jsonlang::BinaryOp::BitwiseAnd => leave_unchanged(lhs, BinaryOp::BitwiseAnd, rhs),
       jsonlang::BinaryOp::BitwiseOr => leave_unchanged(lhs, BinaryOp::BitwiseOr, rhs),
       jsonlang::BinaryOp::RightShift => leave_unchanged(lhs, BinaryOp::RightShift, rhs),

@@ -164,7 +164,7 @@ impl WASMEmitter {
       Instruction::BinOp(BinaryOp::BitwiseOr) => self.emit_line("i32.or"),
       Instruction::BinOp(BinaryOp::LeftShift) => self.emit_line("i32.shl"),
       Instruction::BinOp(BinaryOp::RightShift) => self.emit_line("i32.shr_u"),
-      //Instruction::BinOp(op) => self.emit_line(&format!("{:#?}", op))
+      Instruction::BinOp(BinaryOp::Modulo) => self.emit_line("i32.rem_u"),
     }
   }
 }
